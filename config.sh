@@ -24,17 +24,17 @@ export PROJECT_STARTUP_TIME=10
 # Insert all the commands needed to set up the project, including dependency installations and configurations
 # Note that all commands inside this function will run in the directory passed in the variable "PROJECT_PATH"
 BUILD_PROJECT() {
-    yarn install && yarn build
+    # Example: yarn install && yarn build
 }
 
 # Insert all the commands needed to start the project after setup
 # Note that all commands inside this function will run in the directory passed in the variable "PROJECT_PATH"
 START_PROJECT() {
-    yarn start
+    # Example: yarn start
 }
 
 # Insert all the commands needed to stop the project after setup
 # Note that all commands inside this function will run in the directory passed in the variable "PROJECT_PATH"
 STOP_PROJECT() {
-    fuser -k 3000/tcp && sleep 5
+    # Example: fuser -k 3000/tcp && sleep 5
 }
