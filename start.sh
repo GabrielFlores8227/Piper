@@ -1,6 +1,6 @@
 #!/bin/bash
 source config.sh
-source utils.sh
+source utils/utils.sh
 
 ##
 ## ENVS
