@@ -1,4 +1,6 @@
 #!/bin/bash
+cd "$(dirname "$0")"
+
 source config.sh
 source utils/utils.sh
 
@@ -6,10 +8,8 @@ source utils/utils.sh
 ## ENVS
 ##
 
-INITIAL_DIRECTORY=$(pwd)
-
-USE_PROJECT_PATH=$PROJECT_PATH
-
+DAEMON_DIRECTORY=$(pwd)
+ORIGINAL_PROJECT_PATH=$PROJECT_PATH
 UNSTABLE_PROJECT_SHA=""
 
 ##
@@ -27,7 +27,7 @@ while true
 do
     if ! TPL_CHECK_IF_PROJECT_IS_UP_TO_DATE 
     then
-        USE_PROJECT_PATH=$(mktemp -d)
+        PROJECT_PATH=$(mktemp -d)
 
         TPL_CLONE_PROJECT
 
@@ -35,26 +35,26 @@ do
 
         if [ "$UNSTABLE_PROJECT_SHA" ==  "$PROJECT_SHA" ]
         then
-            echo -e "\n🔴 New project version is not considered stable - $PROJECT_SHA"
+            ECHO_FAILURE "New project version is not considered stable - $PROJECT_SHA"
 
-            USE_PROJECT_PATH=$PROJECT_PATH
+            PROJECT_PATH=$ORIGINAL_PROJECT_PATH
         else
             TPL_STOP_BUILD_START_PROJECT
 
             PROCESS_STATUS=$?
 
-            USE_PROJECT_PATH=$PROJECT_PATH
+            PROJECT_PATH=$ORIGINAL_PROJECT_PATH
 
             if [ $PROCESS_STATUS -eq 0 ]
             then
-                echo -e "\n🟢 New project version is stable"
+                ECHO_SUCCESS "New project version is stable - $PROJECT_SHA"
 
                 UNSTABLE_PROJECT_SHA=""
 
                 TPL_STOP_CLONE_BUILD_START_PROJECT
             else
-                echo -e "\n🔴 New project version is not stable"      
-                echo -e "\nℹ️  Returning to stable version"
+                ECHO_FAILURE "New project version is not stable - $PROJECT_SHA"
+                ECHO_SUCCESS "Returning to stable version"
 
                 UNSTABLE_PROJECT_SHA=$PROJECT_SHA
 
@@ -63,5 +63,5 @@ do
         fi
     fi
 
-    sleep 500
+    sleep 5
 done
