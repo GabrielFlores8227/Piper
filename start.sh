@@ -20,7 +20,7 @@ TPL_CLONE_BUILD_START_PROJECT
 
 if [ $? -ne 0 ]
 then
-    exit $?
+    exit 1
 fi
 
 while true
