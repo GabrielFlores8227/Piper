@@ -1,17 +1,17 @@
 ECHO_INFO() {
-      echo -e "\n[ ⚪ ] $1\e[0m"
+      echo -e "\n⚪  $1"
 }
 
 ECHO_WARNING() {
-      echo -e "\n[ 🟡 ] $1\e[0m"
+      echo -e "\n🟡  $1"
 }
 
 ECHO_SUCCESS() {
-      echo -e "\n[ 🟢 ] $1\e[0m"
+      echo -e "\n🟢  $1"
 }
 
 ECHO_FAILURE() {
-      echo -e "\n[ 🔴 ] $1"
+      echo -e "\n🔴  $1"
 }
 
 CLONE_PROJECT() {
