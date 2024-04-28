@@ -63,5 +63,5 @@ do
         fi
     fi
 
-    sleep 5
+    sleep 500
 done
