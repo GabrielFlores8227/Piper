@@ -24,7 +24,7 @@ fi
 
 while true
 do
-    sleep 20
+    sleep 400
 
     if TPL_CHECK_IF_PROJECT_IS_UP_TO_DATE 
     then
