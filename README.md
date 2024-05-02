@@ -52,7 +52,7 @@ up-to-date with the latest changes.
   
   - `PROJECT_PATH`: The local path where the project will be cloned.
   
-  - `PROJECT_STARTUP_TIME`: Time to wait for project startup before testing (in seconds).
+  - `PROJECT_STARTUP_TIME`: Average project startup time (in seconds).
   
   - `BUILD_PROJECT_COMMAND`: Command to build the project.
   
