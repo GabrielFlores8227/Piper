@@ -24,7 +24,7 @@ fi
 
 while true
 do
-    sleep 400
+    sleep 300
 
     if TPL_CHECK_IF_PROJECT_IS_UP_TO_DATE 
     then
@@ -41,6 +41,7 @@ do
     then
         ECHO_FAILURE "New project version is not considered stable - $PROJECT_SHA"
 
+        rm -rf "$PROJECT_PATH"
         PROJECT_PATH=$ORIGINAL_PROJECT_PATH
     else
         ECHO_INFO "Starting new project version test"
@@ -49,11 +50,13 @@ do
 
         PROCESS_STATUS=$?
 
+        rm -rf "$PROJECT_PATH"
         PROJECT_PATH=$ORIGINAL_PROJECT_PATH
 
         if [ $PROCESS_STATUS -eq 0 ]
         then
             ECHO_SUCCESS "New project version is stable - $PROJECT_SHA"
+            ECHO_INFO "Starting project update"
 
             unset UNSTABLE_PROJECT_SHA
 

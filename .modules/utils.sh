@@ -88,6 +88,11 @@ BUILD_PROJECT() {
 }
 
 TML_BUILD_PROJECT() {
+      if [ -z "$BUILD_PROJECT_COMMAND" ]
+      then
+            return 0
+      fi
+
       cd "$PROJECT_PATH" 
 
       ECHO_INFO "Building project"
@@ -113,6 +118,11 @@ START_PROJECT() {
 }
 
 TML_START_PROJECT() {
+      if [ -z "$START_PROJECT_COMMAND" ]
+      then
+            return 0
+      fi
+
       cd "$PROJECT_PATH"
 
       ECHO_INFO "Starting project"
@@ -139,6 +149,11 @@ STOP_PROJECT() {
 }
 
 TML_STOP_PROJECT() {
+      if [ -z "$STOP_PROJECT_COMMAND" ]
+      then
+            return 0
+      fi
+
       cd "$PROJECT_PATH" 
 
       ECHO_INFO "Stoping project"
