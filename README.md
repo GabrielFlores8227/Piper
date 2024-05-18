@@ -50,7 +50,7 @@ up-to-date with the latest changes.
   
   - `PROJECT_BRANCH`: The branch of the GitHub repository.
   
-  - `PROJECT_PATH`: The local path where the project will be cloned.
+  - `PROJECT_PATH`: The local path where the project will be cloned (include the project folder name).
   
   - `PROJECT_STARTUP_TIME`: Average project startup time (in seconds).
   
