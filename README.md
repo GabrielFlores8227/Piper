@@ -66,6 +66,12 @@ up-to-date with the latest changes.
   bash start.sh
   ```
 
+## ⚡ Pipeline
+
+Piper-Sync monitors the specified branch for updates every 5 minutes. Upon detecting changes, it clones the new repository version to the 
+`/tmp` folder for stability testing. If the new branch version proves stable, Piper-Sync applies the changes to the project specified in the 
+`config.env` file.
+
 ## 💡 Pro Tip
 
 For a seamless experience, configure a daemon to automatically start Piper Sync when your machine boots. Below are the configurations to set up 
