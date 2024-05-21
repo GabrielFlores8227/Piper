@@ -88,6 +88,7 @@ the daemon (don't forget to enable the daemon by running: `systemctl enable`):
   
   [Service]
   Type=simple
+  ExecStartPre=/bin/sleep 15
   ExecStart=/bin/bash /path/to/start.sh
   
   [Install]
