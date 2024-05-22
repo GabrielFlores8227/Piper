@@ -46,19 +46,19 @@ up-to-date with the latest changes.
 
 - ### Set up your configuration in `config.env`:
 
-  - `PROJECT_URL`: The URL of the GitHub repository.
+  - *`PROJECT_URL`: The URL of the GitHub repository.
   
-  - `PROJECT_BRANCH`: The branch of the GitHub repository.
+  - *`PROJECT_BRANCH`: The branch of the GitHub repository.
   
-  - `PROJECT_PATH`: The local path where the project will be cloned (include the project folder name).
+  - *`PROJECT_PATH`: The local path where the project will be cloned (include the project folder name).
   
-  - `PROJECT_STARTUP_TIME`: Average project startup time (in seconds).
+  - *`PROJECT_STARTUP_TIME`: Average project startup time (in seconds).
   
-  - `BUILD_PROJECT_COMMAND`: Command to build the project.
+  - `BUILD_PROJECT_COMMAND`: Command to build the project (the command will run under `PROJECT_PATH`).
   
-  - `START_PROJECT_COMMAND`: Command to start the project.
+  - `START_PROJECT_COMMAND`: Command to start the project (the command will run under `PROJECT_PATH`).
   
-  - `STOP_PROJECT_COMMAND`: Command to stop the project.
+  - `STOP_PROJECT_COMMAND`: Command to stop the project (the command will run under `PROJECT_PATH`).
     
 - ### Execute the script:
 
